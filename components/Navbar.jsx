@@ -4,6 +4,7 @@ import { AiOutlineShopping } from 'react-icons/ai';
 import Popup from 'reactjs-popup';
 import Cart from './Cart';
 import { useStateContext } from '../context/StateContext';
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const Navbar = ({openMenu, setOpenMenu}) => {
 
@@ -16,6 +17,11 @@ const Navbar = ({openMenu, setOpenMenu}) => {
         <Link href="/">
           <img src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
         </Link>
+      </p>
+
+      <p className="searchContainer">
+        <input className='searchBar' type="text" placeholder='Search Products' />
+        <FaMagnifyingGlass />
       </p>
 
       <div className='nav-items'>
