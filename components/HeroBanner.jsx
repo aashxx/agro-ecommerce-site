@@ -9,7 +9,7 @@ const HeroBanner = ({ heroBanner }) => {
     <Carousel autoPlay infiniteLoop interval={3000} showArrows={true} showThumbs={false} showStatus={false}>
       {
         heroBanner?.map((i, index) => (
-          <div className="hero-banner-container" style={{ background: `url('${urlFor(i.image)}') no-repeat center center/cover`}}>
+          <div key={index} className="hero-banner-container" style={{ background: `url('${urlFor(i.image)}') no-repeat center center/cover`}}>
             <div>
               <p className="beats-solo">{i.smallText}</p>
               <h3>{i.midText}</h3>
