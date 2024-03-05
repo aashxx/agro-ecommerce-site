@@ -6,7 +6,7 @@ import { urlFor } from '../sanity/lib/client';
 
 const FooterBanner = ({achievement}) => {
   return (
-    <section className='photo-section'>
+    <section className='photo-section' style={{ marginTop: '100px' }}>
       <div className='products-heading'>
           <h2>📸 Achievements</h2>
       </div>
