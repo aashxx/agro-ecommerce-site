@@ -717,6 +717,45 @@ margin-top: 160px;
   margin-top: -13px;
 }
 
+footer {
+  width: 100%;
+  background-color: whitesmoke;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+footer .footer-items {
+  color: black;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .f-items {
+  width: 250px;
+  margin: 10px 0;
+}
+footer .f-items ul li {
+  font-size: 0.8rem;
+  margin: 2px;
+  list-style: none;
+}
+footer .f-items ul li a {
+  text-decoration: none;
+  color: rgb(24, 49, 83);
+}
+footer .follow {
+  color: rgb(24, 49, 83);
+  text-align: center;
+  font-size: 1.1rem;
+}
+footer .follow i {
+  color: rgb(24, 49, 83);
+  margin: 0 6px 10px 6px;
+  opacity: 0.5;
+}
+
 @media screen and (max-width:800px) {
   .navbar-container{
     height: 100vh;
