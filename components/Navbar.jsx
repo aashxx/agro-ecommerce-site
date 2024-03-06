@@ -26,6 +26,14 @@ const Navbar = ({openMenu, setOpenMenu}) => {
     }
   };
 
+  const handleSearchOnClick = () => {
+      router.push({
+        pathname: '/search',
+        query: { searchItem: searchItem }
+      });
+      setSearchItem("");
+  };
+
   return (
     <div className={'navbar-container'} style={{ top: openMenu ? '0' : '-150%'}}>
       <p className="logo">
@@ -36,7 +44,9 @@ const Navbar = ({openMenu, setOpenMenu}) => {
 
       <div className="searchContainer">
         <input className='searchBar' value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyDown={handleSearch} type="text" placeholder='Search Products' />
-        <FaMagnifyingGlass />
+        <div onClick={handleSearchOnClick}>
+          <FaMagnifyingGlass style={{ color: 'white'}} />
+        </div>
       </div>
 
       <div className='nav-items'>
