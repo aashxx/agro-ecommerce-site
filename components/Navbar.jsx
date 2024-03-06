@@ -1,26 +1,41 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import Popup from 'reactjs-popup';
 import Cart from './Cart';
 import { useStateContext } from '../context/StateContext';
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { useRouter } from 'next/router';
 
 const Navbar = ({openMenu, setOpenMenu}) => {
 
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const closeRef = useRef(null);
 
+  const router = useRouter();
+
+  const [searchItem, setSearchItem] = useState("");
+
+  const handleSearch = (event) => {
+    if (event.key === 'Enter') {
+      router.push({
+        pathname: '/search',
+        query: { searchItem: searchItem }
+      });
+      setSearchItem("");
+    }
+  };
+
   return (
     <div className={'navbar-container'} style={{ top: openMenu ? '0' : '-150%'}}>
       <p className="logo">
-        <Link href="/">
+        <Link href="/"  onClick={() => {setOpenMenu(!openMenu);}}>
           <img src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
         </Link>
       </p>
 
       <p className="searchContainer">
-        <input className='searchBar' type="text" placeholder='Search Products' />
+        <input className='searchBar' value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyDown={handleSearch} type="text" placeholder='Search Products' />
         <FaMagnifyingGlass />
       </p>
 
