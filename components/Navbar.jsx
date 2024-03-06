@@ -34,10 +34,10 @@ const Navbar = ({openMenu, setOpenMenu}) => {
         </Link>
       </p>
 
-      <p className="searchContainer">
+      <div className="searchContainer">
         <input className='searchBar' value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyDown={handleSearch} type="text" placeholder='Search Products' />
         <FaMagnifyingGlass />
-      </p>
+      </div>
 
       <div className='nav-items'>
         <Popup trigger={<button className='nav-popup-triggers'>Seeds</button>} position='bottom center' on='hover' mouseLeaveDelay={300}>
