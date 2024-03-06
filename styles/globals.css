@@ -224,7 +224,19 @@ width: 100%;
   position: relative;
 }
 
+.searchContainer2 {
+  color: gray;
+  position: relative;
+  display: none;
+}
+
 .searchContainer svg {
+  position: absolute;
+  right: 15px;
+  top: 9px;
+}
+
+.searchContainer2 svg {
   position: absolute;
   right: 15px;
   top: 9px;
@@ -784,6 +796,19 @@ footer .follow i {
 
   .layout {
     padding: 10px;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .searchContainer2 {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .searchContainer2 input {
+    width: 390px;
   }
 
   .navbar-container{

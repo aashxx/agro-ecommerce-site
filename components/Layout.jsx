@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import MobileNav from './MobileNav';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 const Layout = ({ children }) => {
 
@@ -18,6 +19,10 @@ const Layout = ({ children }) => {
         <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
         <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </header>
+      <aside className="searchContainer2">
+        <input className='searchBar' type="text" placeholder='Search Products' />
+        <FaMagnifyingGlass />
+      </aside>
       <main className="main-container">
         {children}
       </main>

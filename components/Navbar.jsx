@@ -45,6 +45,7 @@ const Navbar = ({openMenu, setOpenMenu}) => {
                 <Link href="/[category]/[subcategory]" as='/crop-protection/insecticides' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}}>Insecticides</Link>
                 <Link href="/[category]/[subcategory]" as='/crop-protection/fungicides' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}}>Fungicides</Link>
                 <Link href="/[category]/[subcategory]" as='/crop-protection/herbicides' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}}>Herbicides</Link>
+                <button onClick={() => close()} ref={closeRef} style={{display: 'none'}}>Close</button>
               </div>
             )
           }
@@ -55,11 +56,12 @@ const Navbar = ({openMenu, setOpenMenu}) => {
               <div className='options'>
                 <Link href="/[category]/[subcategory]" as='/plant-nutrition/plant-growth-promoters' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}}>Plant Growth Promoters</Link>
                 <Link href="/[category]/[subcategory]" as='/plant-nutrition/fertilizers' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}}>Fertilizers</Link>
+                <button onClick={() => close()} ref={closeRef} style={{display: 'none'}}>Close</button>
               </div>
             )
           }
         </Popup>
-        <Link href="/[category]/[subcategory]" as='/farming-tools/no-sub-category' onClick={() => {setOpenMenu(!openMenu); closeRef.current.click();}} className='nav-popup-triggers'>Farming Tools</Link>
+        <Link href="/[category]/[subcategory]" as='/farming-tools/no-sub-category' onClick={() => {setOpenMenu(!openMenu); }} className='nav-popup-triggers'>Farming Tools</Link>
         <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
           <AiOutlineShopping />
           <span className="cart-item-qty">{totalQuantities}</span>
