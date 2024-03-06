@@ -10,8 +10,10 @@ import { useRouter } from 'next/router';
 const Layout = ({ children }) => {
 
   const [openMenu, setOpenMenu] = useState(false);
-  
+
   const router = useRouter();
+
+  const [searchItem, setSearchItem] = useState("");
 
   const handleSearch = (event) => {
     if (event.key === 'Enter') {
@@ -24,11 +26,11 @@ const Layout = ({ children }) => {
   };
 
   const handleSearchOnClick = () => {
-    router.push({
-      pathname: '/search',
-      query: { searchItem: searchItem }
-    });
-    setSearchItem("");
+      router.push({
+        pathname: '/search',
+        query: { searchItem: searchItem }
+      });
+      setSearchItem("");
   };
 
   return (
@@ -41,7 +43,7 @@ const Layout = ({ children }) => {
         <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </header>
       <aside className="searchContainer2">
-        <input className='searchBar' type="text" placeholder='Search Products' onKeyDown={handleSearch} />
+        <input className='searchBar' value={searchItem} onChange={(e) => setSearchItem(e.target.value)} type="text" placeholder='Search Products' onKeyDown={handleSearch} />
         <div onClick={handleSearchOnClick}>
           <FaMagnifyingGlass style={{ color: 'white'}} />
         </div>
