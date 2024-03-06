@@ -32,7 +32,7 @@ const Search = ({ products }) => {
                     <>
                         <div className="products-heading">
                             <h2>Search Results</h2>
-                            <p>Products matching to "{searchItem}"</p>
+                            <p>Products matching to &quot;{searchItem}&quot;</p>
                         </div>
                         <div className="products-container">
                             {
