@@ -904,6 +904,100 @@ footer .follow i {
   opacity: 0.5;
 }
 
+.signForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Dosis", sans-serif;
+  color: rgb(24, 49, 83);
+  margin-top: 50px;
+}
+.signForm h1 {
+  font-size: 3.6rem;
+  margin-bottom: 30px;
+  font-family: "Dosis", sans-serif;
+}
+.signForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dosis", sans-serif;
+}
+.signForm form .details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-weight: bold;
+  font-family: "Dosis", sans-serif;
+}
+.signForm form .details label {
+  margin-left: 7px;
+  font-family: "Dosis", sans-serif;
+}
+.signForm form input {
+  width: 400px;
+  height: 35px;
+  padding: 7px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid rgb(24, 49, 83);
+  font-size: 1rem;
+  font-family: "Dosis", sans-serif;
+}
+.signForm form button {
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+  background-color: #008037;
+  color: white;
+  border: 2px solid rgb(24, 49, 83);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  width: 120px;
+  margin: 24px 0;
+  transition: all 0.5s;
+}
+.signForm form button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.signForm p {
+  font-weight: bold;
+  font-family: "Dosis", sans-serif;
+}
+.signForm .showPass {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dosis", sans-serif;
+}
+.signForm .showPass input[type=checkbox] {
+  width: 20px;
+  height: 20x;
+  border-radius: 10px;
+  border: 2px solid rgb(24, 49, 83);
+  background-color: #008037;
+  cursor: pointer;
+}
+.signForm .showPass label {
+  font-weight: bolder;
+  font-family: "Dosis", sans-serif;
+}
+
+.validation {
+  text-align: center;
+  font-size: 0.9rem;
+  width: 350px;
+  color: #e5322d;
+  font-weight: lighter;
+  font-family: "Dosis", sans-serif;
+}
+
+
 @media screen and (max-width:800px) {
 
   .layout {
@@ -1012,6 +1106,16 @@ footer .follow i {
 
   .hero-banner-container {
     line-height: 1.3;
+  }
+
+  .signForm input {
+    max-width: 300px;
+  }
+  .alertBox {
+    left: 50px;
+  }
+  .validation {
+    width: 280px;
   }
 
   .hero-banner-container h1 {
