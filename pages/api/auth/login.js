@@ -1,5 +1,5 @@
-import connectToMongo from '../../backend/db';
-import User from '../../backend/models/User';
+import { User } from '../../backend/models/User';
+import { connectToMongo } from '../../backend/db';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
