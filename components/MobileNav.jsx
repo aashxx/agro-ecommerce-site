@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -7,7 +8,7 @@ const MobileNav = ({ setOpenMenu, openMenu }) => {
     <nav className='mobile-navbar'>
         <p className="logo">
             <Link href="/">
-            <img src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
+            <Image src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
             </Link>
         </p>
         <button className='menuBtn' onClick={() => setOpenMenu(!openMenu)}>

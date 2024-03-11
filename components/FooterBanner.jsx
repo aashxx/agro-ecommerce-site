@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { urlFor } from '../sanity/lib/client';
+import Image from 'next/image';
 
 const FooterBanner = ({achievement}) => {
   return (
@@ -13,7 +14,7 @@ const FooterBanner = ({achievement}) => {
       <Carousel className='carousel' autoPlay infiniteLoop interval={1000} showArrows={false} showThumbs={false} showStatus={false}>
           {
             achievement?.map((i, index) => (
-              <img key={index} src={urlFor(i.image && i.image)} alt="" />
+              <Image key={index} src={urlFor(i.image && i.image)} alt="" />
             ))
           }
       </Carousel>

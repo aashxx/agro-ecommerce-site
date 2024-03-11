@@ -1,7 +1,7 @@
 // pages/api/auth/getuser.js
-import { User } from '../../backend/models/User';
-import { connectToMongo } from '../../backend/db';
-import fetchUser from '../../backend/middlewares/fetchuser';
+import { connectToMongo } from "../../../backend/db";
+import fetchUser from "../../../backend/middlewares/fetchuser";
+import { User } from "../../../backend/models/User";
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
