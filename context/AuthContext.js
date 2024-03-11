@@ -23,7 +23,7 @@ const AuthState = (props) => {
 
     // Show Password method
     const handleShowPass = () => {
-        let check = document.getElementById('showPass');
+        let check = document.getElementById("showPass");
         if(check.checked) {
             setShowPass('text');
         } else {

@@ -18,7 +18,7 @@ const Login = () => {
                     <div className="details">
                         <label htmlFor="name">Password</label>
                         <input type={showPass} name='password' onChange={handleLogChange} required/>
-                        <div className="showPass"><input id='showPass' type="checkbox" onClick={handleShowPass} /><label htmlFor="showPass">Show Password</label></div>
+                        <div className="showPass"><input id="showPass" type="checkbox" onClick={handleShowPass} /><label htmlFor="showPass">Show Password</label></div>
                     </div>
                     <button type='submit' id='button-anime'>Login</button>
                 </form>
