@@ -19,7 +19,7 @@ const ProductDetails = ({ product, products }) => {
     if(!localStorage.getItem("token")) {
       router.push('/auth/login');
     }
-  }, []);
+  });
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -31,13 +31,14 @@ const ProductDetails = ({ product, products }) => {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <Image src={urlFor(image && image[index])} className="product-detail-image" />
+            <Image src={urlFor(image && image[index])} alt='product' className="product-detail-image" />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
               <Image
                 key={i}
                 src={urlFor(item)}
+                alt='product'
                 className={i === index ? 'small-image selected-image' : 'small-image'}
                 onMouseEnter={() => setIndex(i)}
               />
