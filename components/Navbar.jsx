@@ -1,3 +1,5 @@
+"use-client";
+
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
@@ -8,7 +10,6 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useRouter } from 'next/router';
 import { AuthContext } from '../context/AuthContext';
 import { FaUserCircle } from "react-icons/fa";
-import { FaCheck } from "react-icons/fa";
 
 const Navbar = ({openMenu, setOpenMenu}) => {
 
