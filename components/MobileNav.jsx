@@ -8,7 +8,7 @@ const MobileNav = ({ setOpenMenu, openMenu }) => {
     <nav className='mobile-navbar'>
         <p className="logo">
             <Link href="/">
-            <Image src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
+            <img src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
             </Link>
         </p>
         <button className='menuBtn' onClick={() => setOpenMenu(!openMenu)}>

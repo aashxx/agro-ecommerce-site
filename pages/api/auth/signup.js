@@ -44,15 +44,3 @@ export default async function handler(req, res) {
     res.status(405).json({ error: 'Method Not Allowed' });
   }
 }
-
-// export default async function handler(req, res) {
-//     if(req.method == "POST") {
-//         try {
-//             res.status(201).json({ "name": "Aashir" });
-//         } catch (err) {
-//             res.status(500).send("Internal error");
-//         }
-//     } else {
-//         res.status(405).json({ error: 'Method Not Allowed' });
-//     }
-// }

@@ -14,7 +14,7 @@ const FooterBanner = ({achievement}) => {
       <Carousel className='carousel' autoPlay infiniteLoop interval={1000} showArrows={false} showThumbs={false} showStatus={false}>
           {
             achievement?.map((i, index) => (
-              <Image key={index} src={urlFor(i.image && i.image)} alt="" />
+              <img key={index} src={urlFor(i.image && i.image)} alt="" />
             ))
           }
       </Carousel>

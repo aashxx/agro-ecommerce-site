@@ -1,7 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { createContext, useState } from 'react';
-import { FaCheck } from "react-icons/fa";
-
 export const AuthContext = createContext();
 
 const AuthState = (props) => {

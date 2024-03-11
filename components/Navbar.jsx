@@ -54,7 +54,7 @@ const Navbar = ({openMenu, setOpenMenu}) => {
     <div className={'navbar-container'} style={{ top: openMenu ? '0' : '-150%'}}>
       <p className="logo">
         <Link href="/"  onClick={() => {setOpenMenu(!openMenu);}}>
-          <Image src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
+          <img src="/logo.webp" alt="Westup Agro Farmer Producer Company Lmtd." />
         </Link>
       </p>
 
