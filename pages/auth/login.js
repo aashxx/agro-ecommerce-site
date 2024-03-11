@@ -22,7 +22,7 @@ const Login = () => {
                     </div>
                     <button type='submit' id='button-anime'>Login</button>
                 </form>
-            <p>Don't have an account? <Link href="/auth/signup">Signup</Link></p>
+            <p>Don&apos;t have an account? <Link href="/auth/signup">Signup</Link></p>
         </div>
     )
 }
