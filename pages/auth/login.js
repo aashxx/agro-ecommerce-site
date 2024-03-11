@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
+
+    const context = useContext(AuthContext);
+    const { showPass, handleShowPass, handleLogChange, handleLogin } = context;
 
     return (
         <div className='signForm'>
             <h1>Login</h1>
-                <form>
+                <form onSubmit={handleLogin} method='post'>
                     <div className="details">
                         <label htmlFor="name">Email ID</label>
-                        <input type="email" name='email' required/>
+                        <input type="email" name='email' onChange={handleLogChange} required/>
                     </div>
                     <div className="details">
                         <label htmlFor="name">Password</label>
-                        <input type="password" name='password' required/>
-                        <div className="showPass"><input id='showPass' type="checkbox" /><label htmlFor="showPass">Show Password</label></div>
+                        <input type={showPass} name='password' onChange={handleLogChange} required/>
+                        <div className="showPass"><input id='showPass' type="checkbox" onClick={handleShowPass} /><label htmlFor="showPass">Show Password</label></div>
                     </div>
                     <button type='submit' id='button-anime'>Login</button>
                 </form>

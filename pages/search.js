@@ -9,6 +9,12 @@ const Search = ({ products }) => {
     const { searchItem } = router.query;
 
     const [searchItems, setSearchItems] = useState([]);
+    
+    useEffect(() => {
+      if(!localStorage.getItem("token")) {
+        router.push('/auth/login');
+      }
+    }, []);
 
     useEffect(() => {
         const displaySearchItems = () => {

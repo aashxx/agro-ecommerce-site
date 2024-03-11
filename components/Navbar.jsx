@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping } from 'react-icons/ai';
 import Popup from 'reactjs-popup';
@@ -6,8 +6,14 @@ import Cart from './Cart';
 import { useStateContext } from '../context/StateContext';
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useRouter } from 'next/router';
+import { AuthContext } from '../context/AuthContext';
+import { FaUserCircle } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
 const Navbar = ({openMenu, setOpenMenu}) => {
+
+  const context = useContext(AuthContext);
+  const { handleLogout, dispUsername, userName } = context;
 
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const closeRef = useRef(null);
@@ -15,6 +21,14 @@ const Navbar = ({openMenu, setOpenMenu}) => {
   const router = useRouter();
 
   const [searchItem, setSearchItem] = useState("");
+
+  const token = typeof window !== "undefined" && localStorage.getItem("token");
+
+  useEffect(() => {
+    if(localStorage.getItem("token")) {
+      dispUsername();
+    }
+  }, []);
 
   const handleSearch = (event) => {
     if (event.key === 'Enter') {
@@ -87,10 +101,29 @@ const Navbar = ({openMenu, setOpenMenu}) => {
           }
         </Popup>
         <Link href="/[category]/[subcategory]" as='/farming-tools/no-sub-category' onClick={() => {setOpenMenu(!openMenu); }} className='nav-popup-triggers'>Farming Tools</Link>
-        <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
-          <AiOutlineShopping />
-          <span className="cart-item-qty">{totalQuantities}</span>
-        </button>
+        {
+          !token ? (
+            <Link onClick={() => {setOpenMenu(!openMenu); }} className='login-btn'  href={'/auth/login'}>Login</Link>
+          ) : (
+            <>
+              <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
+                <AiOutlineShopping />
+                <span className="cart-item-qty">{totalQuantities}</span>
+              </button>
+              <Popup trigger={<button className='account-popup'><FaUserCircle /></button>}>
+                {
+                  (close) => (
+                    <div className='dashboard-popup'>
+                      <p>{userName.name}</p>
+                      <button className='login-btn' onClick={() => {closeRef.current.click(); setOpenMenu(!openMenu); handleLogout(); }}>Logout</button>
+                      <button onClick={() => close()} ref={closeRef} style={{display: 'none'}}>Close</button>
+                    </div>
+                  )
+                }
+              </Popup>
+            </>
+          )
+        }
       </div>      
       {showCart && <Cart />}
     </div>

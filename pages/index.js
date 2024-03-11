@@ -1,24 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { client } from '../sanity/lib/client';
 import { Product, FooterBanner, HeroBanner } from '../components';
+import { useRouter } from 'next/router';
 
-const Home = ({ products, bannerData, achievement }) => (
-  <div>
-    <HeroBanner heroBanner={bannerData && bannerData}  />
+const Home = ({ products, bannerData, achievement }) => {
 
-    <div className="products-heading">
-      <h2>Best Seller Products</h2>
-      <p>Access to all quality products</p>
+  const router = useRouter();
+
+  useEffect(() => {
+    if(!localStorage.getItem("token")) {
+      router.push('/auth/login');
+    }
+  }, []);
+
+  return (
+    <div>
+      <HeroBanner heroBanner={bannerData && bannerData}  />
+
+      <div className="products-heading">
+        <h2>Best Seller Products</h2>
+        <p>Access to all quality products</p>
+      </div>
+
+      <div className="products-container">
+        {products?.map((product) => <Product key={product._id} product={product} />)}
+      </div>
+
+      <FooterBanner achievement={achievement && achievement} />
     </div>
-
-    <div className="products-container">
-      {products?.map((product) => <Product key={product._id} product={product} />)}
-    </div>
-
-    <FooterBanner achievement={achievement && achievement} />
-  </div>
-);
+  )
+};
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';

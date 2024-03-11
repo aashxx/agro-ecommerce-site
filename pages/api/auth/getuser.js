@@ -1,5 +1,5 @@
 // pages/api/auth/getuser.js
-import User from '../../backend/models/User';// Assuming your model is in the backend folder
+import User from '../../backend/models/User';
 import connectToMongo from '../../backend/db';
 import fetchUser from '../../backend/middlewares/fetchuser';
 

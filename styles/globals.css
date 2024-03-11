@@ -997,6 +997,54 @@ footer .follow i {
   font-family: "Dosis", sans-serif;
 }
 
+.login-btn {
+  border-radius: 15px;
+  padding: 10px 16px;
+  background-color: #008037;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 10000 !important;
+}
+
+.account-popup {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #008037;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.dashboard-popup {
+  border: 1px solid #008037;
+  background-color: white;
+  border-radius: 10px;
+  padding: 7px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#button-anime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-loader {
+  pointer-events: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 3px solid rgb(24, 49, 83);
+  border-top-color: whitesmoke;
+  animation: load 5s ease infinite;
+}
+
 
 @media screen and (max-width:800px) {
 

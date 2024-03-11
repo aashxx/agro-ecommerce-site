@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Product } from '../../components';
 import { client } from '../../sanity/lib/client';
 import { useRouter } from 'next/router';
@@ -6,6 +7,12 @@ const CategoryProducts = ({ products }) => {
 
     const router = useRouter();
     const { category, subcategory } = router.query;
+
+    useEffect(() => {
+        if(!localStorage.getItem("token")) {
+        router.push('/auth/login');
+        }
+    }, []);
 
     return (
         <div>
