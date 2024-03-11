@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 const AuthState = (props) => {
 
-    const host = "http://localhost:3000";
+    const host = "http://localhost:3000" || "https://agro-ecommerce-site.vercel.app";
 
     const [signCredentials, setSignCredentials] = useState({name: "", email: "", password: "", cpassword: ""});
     const [logCredentials, setLogCredentials] = useState({email: "", password: ""});
